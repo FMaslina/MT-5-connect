@@ -1,4 +1,5 @@
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import LogRecord
 from .serializers import LogRecordSerializer
@@ -30,9 +31,10 @@ class LogRecordViewSetUpdate(generics.UpdateAPIView):
     queryset = LogRecord.objects.all()
 
 
-        #@csrf_exempt
-        #def post(self, request, *args, **kwargs):
-            #fields_1 = request.data
-            #request.data['comment'] = fields_1.get('test')
-            #super().create(request, *args, **kwargs)
-            #return Response({"m": fields_1.get('test')}, status=status.HTTP_200_OK)
+@api_view(['POST'])
+@csrf_exempt
+def ask(request):
+    fields_1 = request.data
+    print(request)
+    request.data['comment'] = fields_1.get('ask')
+    return Response({"m": fields_1.get('ask')}, status=status.HTTP_200_OK)

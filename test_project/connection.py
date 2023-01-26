@@ -19,3 +19,4 @@ print(start_mt5(username=805061, password="weax5szp", server="OpenInvestments-De
                 path="C:/Program Files/MetaTrader 5/terminal64.exe"))
 print(start_mt5(username=805060, password="bsccvba1", server="OpenInvestments-Demo",
                 path="C:/Program Files/MetaTrader 5 2/terminal64.exe"))
+
